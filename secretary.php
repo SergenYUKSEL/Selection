@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start()
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -21,18 +21,22 @@ session_start();
 
 <body>
     <?php require('header.php'); ?>
-    <div id="myModal">
-        <div class="modal-dialog modal-login">
-            <div class="modal-content" style="margin: 0px;margin-top: 194px;">
-                <div class="modal-header">
-                    <h4 class="h4 modal-title">Portail de connexion</h4>
+    <div class="container">
+        <div class="card card1">
+            <div class="card-body">
+                <h3 class="card-title">Liste des candidats</h3>
+                <p class="card-text small">Card description with lots of great facts and interesting details.</p>
+                <div class="go-corner">
+                    <div class="go-arrow"><div class="go-arrow">→</div></div>
                 </div>
-                <div class="modal-body">
-                    <form action="logged.php" method="POST">
-                        <div class="form-group"><i class="fa fa-star fa-user"></i><input class="form-control" type="email" name="email" placeholder="Email" required="required" style="margin-top: 0px;"></div>
-                        <div class="form-group"><i class="fa fa-star fa-lock"></i><input class="form-control" type="password" name="password" placeholder="Password" required="required" style="margin-top: 45px;"></div>
-                        <div class="form-group"><button class="btn btn-primary btn-block btn-lg" type="submit" name="validateform" style="margin-top: 33px;">Se connecter</button></div>
-                    </form>
+            </div>
+        </div>
+        <div class="card card1">
+            <div class="card-body">
+                <h3 class="card-title">Contact un Admin</h3>
+                <p class="card-text small">Card description with lots of great facts and interesting details.</p>
+                <div class="go-corner">
+                    <div class="go-arrow"><div class="go-arrow">→</div></div>
                 </div>
             </div>
         </div>
