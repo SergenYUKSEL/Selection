@@ -22,8 +22,7 @@ session_start();
 <body>
     <?php require('header.php'); ?>
     <div class="col-md-12 search-table-col" style="margin-top: 183px;margin-right: 0px;">
-        <h1 style="margin-left: 250px;">Liste des comptes</h1>
-        <div class="form-group pull-right col-lg-4"><input type="text" class="search form-control" placeholder="Search by typing here.."></div><span class="counter pull-right"></span>
+        <h1 style="margin-left: 250px;">Liste des comptes</h1> <br>
         <div class="table-responsive table table-hover table-bordered results">
             <table class="table table-hover table-bordered">
                 <thead class="bill-header cs">

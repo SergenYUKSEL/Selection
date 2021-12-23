@@ -22,8 +22,7 @@ session_start();
 <body>
     <?php require('header.php'); ?>
     <div class="col-md-12 search-table-col" style="margin-top: 183px;margin-right: 0px;">
-        <h1 style="margin-left: 250px;">Liste des candidats</h1>
-        <div class="form-group pull-right col-lg-4"><input type="text" class="search form-control" placeholder="Search by typing here.."></div><span class="counter pull-right"></span>
+        <h1 style="margin-left: 250px;">Liste des candidats</h1> <br>
         <div class="table-responsive table table-hover table-bordered results">
             <table class="table table-hover table-bordered">
                 <thead class="bill-header cs">
@@ -32,7 +31,7 @@ session_start();
                         <th id="trs-hd-2" class="col-lg-2">Nom</th>
                         <th id="trs-hd-3" class="col-lg-2">Prénom</th>
                         <th id="trs-hd-4" class="col-lg-1">Serie</th>
-                        <th id="trs-hd-5" class="col-lg-1">Note /20 <a href="listGrid.php?req=2">nice<a</th>
+                        <th id="trs-hd-5" class="col-lg-1">Note /20 <a  style="margin-left: 10px;" href="listGrid.php?req=2" type="button"><i class="fa fa-arrows-v" style="font-size: 15px;color:white;"></i></a><a href="listGrid.php?req=1" style="margin-left: 10px;" type="button"><i style="font-size: 15px;color:white;" class="fa fa-refresh" ></i></a></th>
                         <th id="trs-hd-6" class="col-lg-1">Action</th>
                     </tr>
                 </thead>
@@ -81,7 +80,7 @@ session_start();
                             echo '<td>' , $valeur4, '</td>';
                             echo '<td>' , $valeur5, '</td>';
                             echo '<td>' , $valeur6, '/20</td>';
-                            echo '<td><a class="btn btn-success" style="margin-left: 5px;" href="editGrid.php?id=', $valeur1 , '"type="button"><i class="fa fa-wrench" style="font-size: 15px;"></i></a><a class="btn btn-danger" style="margin-left: 5px;" href="deleteGrid.php?id=', $valeur1 , '"type="button"><i class="fa fa-trash" style="font-size: 15px;"></i></a></td>';
+                            echo '<td><a class="btn btn-info" href="showGrid.php?id=' ,$valeur1 ,'" style="margin-left: 5px;" type="button"><i class="fa fa-user" style="font-size: 15px;color:white;"></i></a><a class="btn btn-success" style="margin-left: 5px;" href="editGrid.php?id=', $valeur1 , '"type="button"><i class="fa fa-wrench" style="font-size: 15px;"></i></a><a class="btn btn-danger" style="margin-left: 5px;" href="deleteGrid.php?id=', $valeur1 , '"type="button"><i class="fa fa-trash" style="font-size: 15px;"></i></a></td>';
                             echo '</tr>';
                             }
                         
