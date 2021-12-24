@@ -1,4 +1,15 @@
 <?php
+session_start();
+
+if(!isset($_SESSION['logged'])) {
+    header("Location: index.php");
+    die();
+}
+else if($_SESSION['role'] == 'administrator') {
+    header("Location: admin.php");
+    die();
+}
+
     $id = $_GET['id'];
             
             if(isset($_POST['candidat_number'])) {

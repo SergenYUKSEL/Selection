@@ -2,6 +2,18 @@
  if(session_status() == PHP_SESSION_NONE) {
     session_start();
     }
+    if(!isset($_SESSION['logged'])) {
+        header("Location: index.php");
+        die();
+    }
+    
+    else if($_SESSION['role'] == 'teacher') {
+        header("Location: teacher.php");
+        die();
+    } else if($_SESSION['role'] == 'secretary') {
+        header("Location: secretary.php");
+        die();
+    }
     
     $id = $_GET['id'];
     

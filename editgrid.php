@@ -1,5 +1,14 @@
 <?php
 session_start();
+
+if(!isset($_SESSION['logged'])) {
+    header("Location: index.php");
+    die();
+}
+else if($_SESSION['role'] == 'administrator') {
+    header("Location: admin.php");
+    die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
