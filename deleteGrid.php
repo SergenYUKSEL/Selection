@@ -31,7 +31,7 @@
                 $res = $conn->prepare($req);
                 $res->bindValue(':id', $id);
                 $res->execute();
-                header('Location: listGrid.php');
+                header('Location: listGrid.php?req=1');
                 exit();
     ?>
    

@@ -36,7 +36,7 @@ else if($_SESSION['role'] == 'administrator') {
     <?php require('header.php'); ?>
     <form class="bootstrap-form-with-validation" method="POST" action="validate_grid.php" style="margin-top: 194px;margin-right: 92px;margin-left: 130px;">
         <h2 class="text-center">Remplir une grille</h2>
-        <div class="form-group mb-3"><label class="form-label" for="text-input">Numéro de candidat :</label><input class="form-control" type="number" id="text-input" name="candidat_number"></div>
+        <div class="form-group mb-3"><label class="form-label" for="text-input">Numéro de candidat :</label><input class="form-control" type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" id="text-input" name="candidat_number" maxlength="9"></div>
         <div class="form-group mb-3"><label class="form-label" for="text-input">Nom :</label><input class="form-control" type="text" id="text-input" name="lastname"></div>
         <div class="form-group mb-3"><label class="form-label" for="text-input">Prénom :</label><input class="form-control" type="text" id="text-input" name="firstname"></div>
         <div class="form-group mb-3"><label class="form-label" for="text-input">Série :</label>
@@ -90,7 +90,7 @@ else if($_SESSION['role'] == 'administrator') {
             <div class="form-check"><input class="form-check-input" type="radio" name="motivation_letter" value="Negatif"  id="formCheck-11"><label class="form-check-label" for="formCheck-11">Négatif (-2pts)</label></div>
         </div> <br>
         <div class="form-group mb-3"><label class="form-label" for="textarea-input">Remarques </label><textarea class="form-control" id="textarea-input" name="notice"></textarea></div>
-        <div class="form-group mb-3"><label class="form-label" for="text-input">Note du candidat : (0 si dossier refusé)</label><input class="form-control" placeholder="/20" type="number" id="text-input" name="note"></div>
+        <div class="form-group mb-3"><label class="form-label" for="text-input">Note du candidat : (0 si dossier refusé)</label><input class="form-control" placeholder="/20" type="number" id="text-input" min="0" max="20" name="note"></div>
         <div class="form-group mb-3"><button class="btn btn-primary" type="submit">Ajouter le candidat</button></div>
     </form>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>

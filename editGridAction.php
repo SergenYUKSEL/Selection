@@ -137,7 +137,7 @@ else if($_SESSION['role'] == 'administrator') {
                 sleep(3); // attends 3 secondes
                 echo "<script language=\"javascript\">"
                 . "alert('Vous avez bien modifié le compte, vous allez être redirigé vers la page de liste de candidats :')"  .  "</script>"
-                  . "<script language=\"javascript\">" .  "window.location.replace('listGrid.php');" .  "</script>";
+                  . "<script language=\"javascript\">" .  "window.location.replace('listGrid.php?req=1');" .  "</script>";
             }
 
 ?>
