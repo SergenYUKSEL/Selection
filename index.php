@@ -8,7 +8,6 @@ $otp =TOTP::create('UQ6PECBOFV7DAG6EYEGHC65HYJQNVW6ZPC6H6LB27RI4J76H3E3KJYC4P4N6
 $otp->setLabel('Test');
 $chl = $otp->getProvisioningUri();
 $link = "https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=".$chl;
-var_dump($link)
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -42,6 +41,7 @@ var_dump($link)
                         <div class="form-group"><i class="fa fa-star fa-user"></i><input class="form-control" type="email" name="email" placeholder="Email" required="required" style="margin-top: 0px;"></div>
                         <div class="form-group"><i class="fa fa-star fa-lock"></i><input class="form-control" type="password" name="password" placeholder="Password" required="required" style="margin-top: 45px;"></div>
                         <div class="form-group"><i class="fa fa-google" aria-hidden="true"></i><input class="form-control" type="number" name="code-auth" placeholder="Google Authenticator" required="required" style="margin-top: 45px;"></div>
+                        <p>Code Google Auth : <?php echo $otp->now() ?></p>
                         <div class="form-group"><button class="btn btn-primary btn-block btn-lg" type="submit" name="validateform" style="margin-top: 33px;">Se connecter</button></div>
                         
 

@@ -48,12 +48,18 @@ if(!empty($_POST['code-auth'])) {
             }
             else
             {
-                $erreur = "Mauvais mail ou mot de passe";
+              echo"<script language=\"javascript\">"
+                 . "alert('Mauvais mail ou mot de passe.')"  .  "</script>"
+                 . "<script language=\"javascript\">" .  "window.location.replace('teacher.php');" .  "</script>"; 
+              die();
             }
         }
         else
         {
-            $erreur = "Tous les champs doivent être complétés !";
+              echo"<script language=\"javascript\">"
+              . "alert('Tous les champs doivent être complétés !')"  .  "</script>"
+              . "<script language=\"javascript\">" .  "window.location.replace('teacher.php');" .  "</script>"; 
+              die();
         }
     }
    }
