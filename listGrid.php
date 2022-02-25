@@ -32,6 +32,11 @@ else if($_SESSION['role'] == 'administrator') {
     <?php require('header.php'); ?>
     <div class="col-md-12 search-table-col" style="margin-top: 183px;margin-right: 0px;">
         <h1 style="margin-left: 250px;">Liste des candidats</h1> <br>
+        <div class="col-md-12 head">
+            <div class="float-right">
+                <a href="exportData.php" class="btn btn-success"><i class="dwn"></i> Export</a>
+            </div>
+</div>
         <div class="table-responsive table table-hover table-bordered results">
             <table class="table table-hover table-bordered">
                 <thead class="bill-header cs">
