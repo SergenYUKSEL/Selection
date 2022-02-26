@@ -79,7 +79,7 @@ else if($_SESSION['role'] == 'teacher') {
                         $valeur4=$tablo[$i]['email'];
                         $valeur5=$tablo[$i]['role'];
                         if($row = $res->fetch(PDO::FETCH_ASSOC)) {
-                            
+                            echo "test";
                         }
                         if($i%$nbcol==0)
                         echo ' <tr>';
