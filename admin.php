@@ -37,7 +37,7 @@ else if($_SESSION['role'] == 'teacher') {
         <div class="card card1">
             <div class="card-body">
                 <h3 class="card-title">Créer un compte</h3>
-                <p class="card-text small">Card description with lots of great facts and interesting details.</p>
+                <p class="card-text small">Vous pouvez créer un compte Administrateur,Secretaire ou Professeur.</p>
                 <div class="go-corner">
                     <div class="go-arrow"><div class="go-arrow">→</div></div>
                 </div>
@@ -46,7 +46,7 @@ else if($_SESSION['role'] == 'teacher') {
         <div class="card card1">
             <div class="card-body">
                 <h3 class="card-title">Liste des comptes</h3>
-                <p class="card-text small">Card description with lots of great facts and interesting details.</p>
+                <p class="card-text small">.</p>
                 <div class="go-corner">
                     <div class="go-arrow"><div class="go-arrow">→</div></div>
                 </div>
