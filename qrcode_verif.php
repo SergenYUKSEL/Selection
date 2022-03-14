@@ -35,7 +35,8 @@ $otp = TOTP::create($_SESSION['chl']);
                     <form action="validate_qrcode.php" method="POST">
                       <div class="form-group"><i class="fa fa-google" aria-hidden="true"></i><input class="form-control" type="number" name="code-auth" placeholder="Google Authenticator" required="required" style="margin-top: 45px;"></div>
                          <p>Code Google Auth : <?php  echo $otp->now();?></p>
-                        <div class="form-group"><button class="btn btn-primary btn-block btn-lg" type="submit" name="validateform" style="margin-top: 33px;">Confirmer</button></div>
+                        <div class="form-group"><button class="btn btn-primary btn-block btn-lg" type="submit" name="validateform" style="margin-top: 33px;">Confirmer</button></div> <br>
+                        <a class="send-code" style="text-decoration: none;color: black;font-size:14px" href="sendcode.php">Envoyer le code d'authentification par mail</a>
                         
 
                     </form>

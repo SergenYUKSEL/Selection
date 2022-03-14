@@ -46,7 +46,7 @@ if ($_POST['password'] !== $_POST['confirm_password']) {
             sleep(3);
             echo"<script language=\"javascript\">"
             . "alert('Le compte a bien été créé !')" . "</script>"
-              . "<script language=\"javascript\">" .  "window.location.replace('index.php');" .  "</script>";
+              . "<script language=\"javascript\">" .  "window.location.replace('admin.php');" .  "</script>";
     }
     catch(PDOExeption $e) {
         echo 'Impossible de traiter les donnée, Erreur !  : '. $e->getMessage();

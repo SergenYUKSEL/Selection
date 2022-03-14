@@ -38,7 +38,7 @@ else if($_SESSION['role'] == 'administrator') {
         <div class="card card1">
             <div class="card-body">
                 <h3 class="card-title">Ajout d'un candidat</h3>
-                <p class="card-text small">Card description with lots of great facts and interesting details.</p>
+                <p class="card-text small">Formulaire permettant d'ajouter un candidat.</p>
                 <div class="go-corner">
                     <div class="go-arrow"><div class="go-arrow">→</div></div>
                 </div>
@@ -47,7 +47,7 @@ else if($_SESSION['role'] == 'administrator') {
         <div class="card card1">
             <div class="card-body">
                 <h3 class="card-title">Liste des candidats</h3>
-                <p class="card-text small">Card description with lots of great facts and interesting details.</p>
+                <p class="card-text small">Liste des candidats dèja inscrit.</p>
                 <div class="go-corner">
                     <div class="go-arrow"><div class="go-arrow">→</div></div>
                 </div>
