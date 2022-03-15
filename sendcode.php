@@ -17,7 +17,6 @@ $otp = TOTP::create($_SESSION['chl']);
      'X-Mailer: PHP/' . phpversion();
  $sended = NULL;
 
-
  if (mail($dest,$subject,$message,$headers)) {
    $sended = 1;
  }
@@ -25,7 +24,9 @@ $otp = TOTP::create($_SESSION['chl']);
          
      }
  if ($sended === 1) {
-   echo "<script language=\"javascript\">" .  "window.location.replace('./');" .  "</script>";
+  echo"<script language=\"javascript\">"
+  . "alert('Le code a bien été envoyé par mail')" . "</script>"
+    . "<script language=\"javascript\">" .  "window.location.replace('qrcode_verif.php');" .  "</script>";
    
  }
  else {

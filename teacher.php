@@ -6,6 +6,12 @@ if(!isset($_SESSION['logged'])) {
     die();
 }
 
+else if($_SESSION['verify'] == false) {
+    echo"<script language=\"javascript\">"
+    . "alert('Il faut être authentifier pour pouvoir accéder à cette page)" .  "</script>"
+      . "<script language=\"javascript\">" .  "window.location.replace('qrcode_verif.php');" .  "</script>";
+}
+
 else if($_SESSION['role'] == 'administrator') {
     header("Location: admin.php");
     die();

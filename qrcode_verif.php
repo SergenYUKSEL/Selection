@@ -4,7 +4,6 @@ require_once __DIR__.'/vendor/autoload.php';
 
 use OTPHP\TOTP;
 $otp = TOTP::create($_SESSION['chl']);
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -34,9 +33,9 @@ $otp = TOTP::create($_SESSION['chl']);
     <div class="modal-body">
                     <form action="validate_qrcode.php" method="POST">
                       <div class="form-group"><i class="fa fa-google" aria-hidden="true"></i><input class="form-control" type="number" name="code-auth" placeholder="Google Authenticator" required="required" style="margin-top: 45px;"></div>
-                         <p>Code Google Auth : <?php  echo $otp->now();?></p>
+                         <p>Code Google Auth : <strong><?php  echo $otp->now();?></strong></p>
                         <div class="form-group"><button class="btn btn-primary btn-block btn-lg" type="submit" name="validateform" style="margin-top: 33px;">Confirmer</button></div> <br>
-                        <a class="send-code" style="text-decoration: none;color: black;font-size:14px" href="sendcode.php">Envoyer le code d'authentification par mail</a>
+                        <a style="text-decoration: none;color: black;font-size:14px;cursor: pointer;background-color: #00ce81;padding: 6px;color: #FFF" href="sendcode.php">Envoyer le code d'authentification par mail</a>
                         
 
                     </form>

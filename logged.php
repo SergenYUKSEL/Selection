@@ -24,6 +24,12 @@ require_once __DIR__.'/vendor/autoload.php';
               $_SESSION['chl'] = $userinfo['chl'];
               $_SESSION['active'] = $userinfo['active'];
               $_SESSION['logged'] = true;
+              if($userinfo['active'] === "true") {
+                $_SESSION['verify'] = false;
+              }
+              else if ($userinfo['active'] === "false") {
+                $_SESSION['verify'] = true;
+              }
               if($_SESSION['active'] == 'true') {
                 echo"<script language=\"javascript\">"
                 . "alert('Vous devez rentrer votre code qr code :')" .  "</script>"

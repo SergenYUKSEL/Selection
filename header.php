@@ -35,7 +35,9 @@
                             else if(isset($_SESSION['role']) && $_SESSION['role'] === 'teacher') {
                                 echo "<li class=\"nav-item\"><a class=\"nav-link\" href=\"grid.php\">Remplir une grille</a></li>";
                                 } ?>
-                        <li class="nav-item"><a class="nav-link" href="activate_doubleauth.php">Double Authentification</a></li>
+                        <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
+                           echo '<li class="nav-item"><a class="nav-link" href="activate_doubleauth.php">Double Authentification</a></li>';
+                        } ?>
                     </ul>
                     <form class="me-auto search-form" target="_self">
                         <div class="d-flex align-items-center"></div>
