@@ -1,5 +1,7 @@
 <?php
 session_start();
+session_destroy();
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -28,10 +30,15 @@ session_start();
                     <h4 class="h4 modal-title">Portail de connexion</h4>
                 </div>
                 <div class="modal-body">
+                    <!-- <img style="margin-left:4vh;margin-bottom:3vh;" src="<?php // echo $link ?>"></img> -->
                     <form action="logged.php" method="POST">
                         <div class="form-group"><i class="fa fa-star fa-user"></i><input class="form-control" type="email" name="email" placeholder="Email" required="required" style="margin-top: 0px;"></div>
                         <div class="form-group"><i class="fa fa-star fa-lock"></i><input class="form-control" type="password" name="password" placeholder="Password" required="required" style="margin-top: 45px;"></div>
+                      <!--  <div class="form-group"><i class="fa fa-google" aria-hidden="true"></i><input class="form-control" type="number" name="code-auth" placeholder="Google Authenticator" required="required" style="margin-top: 45px;"></div> -->
+                      <!--  <p>Code Google Auth : <?php // echo $otp->now();?></p> -->
                         <div class="form-group"><button class="btn btn-primary btn-block btn-lg" type="submit" name="validateform" style="margin-top: 33px;">Se connecter</button></div>
+                        
+
                     </form>
                 </div>
             </div>
