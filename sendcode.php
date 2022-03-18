@@ -7,17 +7,14 @@ use OTPHP\TOTP;
 $otp = TOTP::create($_SESSION['chl']);
 
 
- $email = "vlk.kruxy@gmail.com";
  $dest = $_SESSION['email'];
  $name = $_SESSION['lastname'] . " " .  $_SESSION['firstname'];
  $subject = "Code de secours SELECTION : ". $name;
- $message = 'Demande du code de double authentification de la part de' . " " .  $name . "\r\n" . "\r\n" . $otp->now(); 
- $headers = 'From:' . $email . "\r\n" .
-     'Reply-To: ' . $email . "\r\n" .
-     'X-Mailer: PHP/' . phpversion();
+ $message = 'Demande du code de double authentification de la part de' . " " .  $name . "\r\n" . "\r\n" . $otp->now() . "\r\n" . "NE PAS RÉPONDRE SOUS CE MAIL MERCI"; 
+ 
  $sended = NULL;
 
- if (mail($dest,$subject,$message,$headers)) {
+ if (mail($dest,$subject,$message)) {
    $sended = 1;
  }
    else {
