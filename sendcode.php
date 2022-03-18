@@ -11,10 +11,12 @@ $otp = TOTP::create($_SESSION['chl']);
  $name = $_SESSION['lastname'] . " " .  $_SESSION['firstname'];
  $subject = "Code de secours SELECTION : ". $name;
  $message = 'Demande du code de double authentification de la part de' . " " .  $name . "\r\n" . "\r\n" . $otp->now() . "\r\n" . "NE PAS RÉPONDRE SOUS CE MAIL MERCI"; 
- 
+ $headers = 'From: Egnom SELECTION <contact.selection.egnom@gmail.com>' . PHP_EOL .
+      'X-Mailer: PHP/' . phpversion();
+
  $sended = NULL;
 
- if (mail($dest,$subject,$message)) {
+ if (mail($dest,$subject,$message,$headers)) {
    $sended = 1;
  }
    else {
