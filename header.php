@@ -26,7 +26,7 @@
                                 echo '<li class="nav-item"><a class="nav-link" href="listGrid.php?req=1" ">Liste des étudiants inscrits</a></li>';
                                 }
                             else if(isset($_SESSION['role']) && $_SESSION['role'] === 'secretary') {
-                                echo '<li class="nav-item"><a class="nav-link" href="ListGrid.php?req=1">Liste des étudiants inscrits</a></li>';
+                                echo '<li class="nav-item"><a class="nav-link" href="listGrid.php?req=1">Liste des étudiants inscrits</a></li>';
                                 } ?>
                         
                         <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'administrator') {
