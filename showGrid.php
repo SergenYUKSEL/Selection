@@ -10,6 +10,7 @@ else if($_SESSION['verify'] == false) {
     echo"<script language=\"javascript\">"
     . "alert('Il faut être authentifier pour pouvoir accéder à cette page)" .  "</script>"
       . "<script language=\"javascript\">" .  "window.location.replace('qrcode_verif.php');" .  "</script>";
+      // cette condition permet à l'utilisateur, connecté mais n'ayant pas validé le qr code à ne pas passer à travers la page d'authentification
 }
 
 else if($_SESSION['role'] == 'administrator') {
@@ -44,13 +45,13 @@ else if($_SESSION['role'] == 'administrator') {
                  {
                      require('config/connectBDD.php');
                      $id = $_GET['id'];
-                     $req = "SELECT * FROM grid WHERE id='$id'";
+                     $req = "SELECT * FROM grid WHERE id='$id'"; // on selectionne la grille où l'id est égale au id récupérer par la méthode GET
                      
                      $res = $conn->query($req);
               
                      
                      if ($res->rowCount() > 0) {
-                         
+                         // puis on affiche toutes les informations de la grille du candidat selectionné
                          if($row = $res->fetch(PDO::FETCH_ASSOC)) { 
                             echo'<h1 style="margin-left: 250px;">Information sur le candidat N°'  . $row['candidat_number'].'</h1> <br>';
                             echo'<div class="table-responsive table table-hover table-bordered results">';

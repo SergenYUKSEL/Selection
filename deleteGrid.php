@@ -11,6 +11,7 @@
         echo"<script language=\"javascript\">"
         . "alert('Il faut être authentifier pour pouvoir accéder à cette page)" .  "</script>"
           . "<script language=\"javascript\">" .  "window.location.replace('qrcode_verif.php');" .  "</script>";
+          // cette condition permet à l'utilisateur, connecté mais n'ayant pas validé le qr code à ne pas passer à travers la page d'authentification
     }
     
     else if($_SESSION['role'] == 'secretary') {
@@ -21,7 +22,7 @@
         header("Location: admin.php");
         die();
     }
-    $id = $_GET['id'];
+    $id = $_GET['id']; // on récupère l'id grâce à la méthode GET
     
 ?>
 <!DOCTYPE html>
@@ -34,7 +35,7 @@
 <body>
     <?php
     require_once('config/connectBDD.php');
-                $req = "DELETE FROM grid WHERE id=:id LIMIT 1";
+                $req = "DELETE FROM grid WHERE id=:id LIMIT 1"; // on supprime la grille lorsque l'id est égale à l'id récupérer grâce à la méthode GET
                 $res = $conn->prepare($req);
                 $res->bindValue(':id', $id);
                 $res->execute();

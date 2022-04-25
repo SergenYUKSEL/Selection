@@ -3,7 +3,7 @@ session_start();
 require_once __DIR__.'/vendor/autoload.php';
 
 use OTPHP\TOTP;
-$otp = TOTP::create($_SESSION['chl']);
+$otp = TOTP::create($_SESSION['chl']); // on créer le qr code avec la méthode TOTP et la donnée chl de la base de donnée de l'utilisateur
 ?>
 <!DOCTYPE html>
 <html lang="fr">

@@ -10,6 +10,7 @@ else if($_SESSION['verify'] == false) {
     echo"<script language=\"javascript\">"
     . "alert('Il faut être authentifier pour pouvoir accéder à cette page)" .  "</script>"
       . "<script language=\"javascript\">" .  "window.location.replace('qrcode_verif.php');" .  "</script>";
+      // cette condition permet à l'utilisateur, connecté mais n'ayant pas validé le qr code à ne pas passer à travers la page d'authentification
 }
 
 
@@ -44,7 +45,7 @@ else if($_SESSION['role'] == 'administrator') {
                  {
                      require('config/connectBDD.php');
                      $id = $_GET['id'];
-                     $req = "SELECT * FROM grid WHERE id='$id'";
+                     $req = "SELECT * FROM grid WHERE id='$id'"; // on selectionne la grille correspondant au id sellectionné par la méthode GET
                      
                      $res = $conn->query($req);
               
@@ -113,7 +114,7 @@ else if($_SESSION['role'] == 'administrator') {
                     }
                 }    
     ?>
-        <div class="form-group mb-3"><button class="btn btn-primary" type="submit">Ajouter le candidat</button></div>
+        <div class="form-group mb-3"><button class="btn btn-primary" type="submit">Modifier les informations du candidat</button></div>
     </form>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Table-With-Search.js"></script>

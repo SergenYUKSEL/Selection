@@ -10,6 +10,7 @@ else if($_SESSION['verify'] == false) {
     echo"<script language=\"javascript\">"
     . "alert('Il faut être authentifier pour pouvoir accéder à cette page)" .  "</script>"
       . "<script language=\"javascript\">" .  "window.location.replace('qrcode_verif.php');" .  "</script>";
+      // cette condition permet à l'utilisateur, connecté mais n'ayant pas validé le qr code à ne pas passer à travers la page d'authentification
 }
 
 else if($_SESSION['role'] == 'administrator') {
@@ -114,7 +115,7 @@ else if($_SESSION['role'] == 'administrator') {
            
             require('config/connectBDD.php');
             try{
-
+                // on remplace les données de la table par celle récupérer par la méthode POST lors du formulaire de modification
                 $update = $conn->prepare("
                   UPDATE grid
                   SET candidat_number = ?,

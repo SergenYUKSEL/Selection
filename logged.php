@@ -10,10 +10,10 @@ require_once __DIR__.'/vendor/autoload.php';
         $passwdconnect = sha1($_POST['password']);
         if(!empty($emailconnect) AND !empty($passwdconnect))
         {
-            $requser = $conn->prepare("SELECT * FROM account WHERE email = ? AND password = ?");
+            $requser = $conn->prepare("SELECT * FROM account WHERE email = ? AND password = ?"); // si l'email et le mot de passe est mis, on regarde si ça existe dans la base de donnée
             $requser->execute(array($emailconnect, $passwdconnect));
             $userexist = $requser->rowCount();
-            if($userexist == 1)
+            if($userexist == 1) // si c'est fonctionnel, on associe des sessions a la connection, puis on authentifie l'utilisateur
             {
               $userinfo = $requser->fetch();
               $_SESSION['id'] = $userinfo['id'];
@@ -24,11 +24,11 @@ require_once __DIR__.'/vendor/autoload.php';
               $_SESSION['chl'] = $userinfo['chl'];
               $_SESSION['active'] = $userinfo['active'];
               $_SESSION['logged'] = true;
-              if($userinfo['active'] === "true") {
+              if($userinfo['active'] === "true") { // si active est en true, on met le statut de verify en false
                 $_SESSION['verify'] = false;
               }
               else if ($userinfo['active'] === "false") {
-                $_SESSION['verify'] = true;
+                $_SESSION['verify'] = true; // si active est en false, alors on met le statut de  verify en true
               }
               if($_SESSION['active'] == 'true') {
                 echo"<script language=\"javascript\">"

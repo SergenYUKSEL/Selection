@@ -10,6 +10,7 @@ else if($_SESSION['verify'] == false) {
     echo"<script language=\"javascript\">"
     . "alert('Il faut être authentifier pour pouvoir accéder à cette page)" .  "</script>"
       . "<script language=\"javascript\">" .  "window.location.replace('qrcode_verif.php');" .  "</script>";
+      // cette condition permet à l'utilisateur, connecté mais n'ayant pas validé le qr code à ne pas passer à travers la page d'authentification
 }
 
 else if($_SESSION['role'] == 'teacher') {
@@ -48,7 +49,7 @@ else if($_SESSION['role'] == 'teacher') {
                  {
                      require('config/connectBDD.php');
                      $id = $_GET['id'];
-                     $req = "SELECT * FROM account WHERE id='$id'";
+                     $req = "SELECT * FROM account WHERE id='$id'"; // on reprends les informations dèja présente dans la base de donnée grâce à son id
                      
                      $res = $conn->query($req);
               
@@ -90,7 +91,7 @@ else if($_SESSION['role'] == 'teacher') {
                         }
                 }   
                 ?>
-                </div><button class="btn btn-light submit-button" name="updated"  type="submit">Créer le compte</button>
+                </div><button class="btn btn-light submit-button" name="updated"  type="submit">Modifier le compte</button>
             </form>
         </div>
     </div>

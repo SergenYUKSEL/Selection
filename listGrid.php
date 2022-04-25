@@ -10,6 +10,7 @@ else if($_SESSION['verify'] == false) {
     echo"<script language=\"javascript\">"
     . "alert('Il faut être authentifier pour pouvoir accéder à cette page)" .  "</script>"
       . "<script language=\"javascript\">" .  "window.location.replace('qrcode_verif.php');" .  "</script>";
+      // cette condition permet à l'utilisateur, connecté mais n'ayant pas validé le qr code à ne pas passer à travers la page d'authentification
 }
 
 else if($_SESSION['role'] == 'administrator') {
@@ -68,7 +69,7 @@ else if($_SESSION['role'] == 'administrator') {
                         } else if($_GET['req'] === "2") {
                             require('config/connectBDD.php');
                             
-                            $req = "SELECT * FROM grid ORDER BY note DESC";
+                            $req = "SELECT * FROM grid ORDER BY note DESC"; // on selectionne toutes les grilles de candidats par ordre décroissant
                         }
                             //--- Résultat ---//
                             $res= $conn->query($req);
@@ -94,7 +95,7 @@ else if($_SESSION['role'] == 'administrator') {
                             if($row = $res->fetch(PDO::FETCH_ASSOC)) {
                                 
                             }
-                            if($i%$nbcol==0)
+                            if($i%$nbcol==0) // on affiche dans un tableau  la liste des grilles de candidats avec les valeurs suivantes : id, candidat_number, lastname, firstname, serie et note
                             echo ' <tr">';
                             echo '<td >' , $valeur2, '</td>';
                             echo '<td>' , $valeur3, '</td>';

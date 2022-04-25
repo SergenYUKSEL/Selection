@@ -33,6 +33,7 @@ $note = $_POST['note'];
         require('config/connectBDD.php');
         $send = $conn->prepare("INSERT INTO grid(candidat_number, lastname, firstname, serie, serious, absence, behavior, higher_education, avis_pp, avis_principal, motivation_letter, notice, note) 
                                 VALUES(:candidat_number, :lastname, :firstname, :serie, :serious, :absence, :behavior, :higher_education, :avis_pp, :avis_principal, :motivation_letter, :notice, :note)");
+                                // on insére toutes les données remplis lors du formulaire pour la grille du candidat
         $send->execute(array(
             ":candidat_number" => $candidat,
             ":lastname" => $lastname,

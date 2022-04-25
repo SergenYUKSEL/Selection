@@ -9,7 +9,7 @@ $otp = TOTP::create($_SESSION['chl']);
 if(isset($_POST['validateform']))
     {
         if(!empty($_POST['code-auth'])) {
-             if($otp->verify(htmlspecialchars($_POST['code-auth']))) {
+             if($otp->verify(htmlspecialchars($_POST['code-auth']))) { // si la verification du code est correcte, alors on envoie l'utilisateur à sa page d'accueil en fonction du compte
                 if($_SESSION['role']=='administrator') {
                 $_SESSION['verify'] = true;
                 header('Location: admin.php');

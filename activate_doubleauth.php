@@ -9,9 +9,9 @@ if(!isset($_SESSION['logged'])) {
 require_once __DIR__.'/vendor/autoload.php';
 
 use OTPHP\TOTP;
-$otp = TOTP::create($_SESSION['chl']);
-$otp->setLabel('Selection' . ' ' . $_SESSION['lastname']);
-$chl = $otp->getProvisioningUri();
+$otp = TOTP::create($_SESSION['chl']); // on créer l'authentification qr code grâce au code chl qu'on a généré automatiquement et insérer dans la bdd lors de l'inscription
+$otp->setLabel('Selection' . ' ' . $_SESSION['lastname']); // Lorsque l'utilisateur scannera le qr code, le nom du code sera Selection suivi de son nom de famille
+$chl = $otp->getProvisioningUri(); // génération d'un uri qui est dynamique avec les données de l'utilisateurs pour la variable $link
 $link = "https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=".$chl;
 ?>
 <!DOCTYPE html>
@@ -41,13 +41,13 @@ $link = "https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=".$chl;
                     <h4 class="h4 modal-title">Activer la double authentification</h4>
                 </div>
                 <div class="modal-body">
-                     <img style="margin-left:4vh;margin-bottom:3vh;" src="<?php  echo $link ?>"></img>
+                     <img style="margin-left:4vh;margin-bottom:3vh;" src="<?php  echo $link ?>"></img> <!-- on affiche le qr code -->
                     <form action="validate_active_qrcode.php" method="POST">
                        <div class="form-group"><p>Veuillez scanner le QR code avec l'application Google Authentification</p></div>
                        <?php if($_SESSION['active'] == 'true') {
-                         echo '<div class="form-group"><a href="validate_disabled_qrcode.php" class="btn btn-danger" >Désactiver</a></div>';
+                         echo '<div class="form-group"><a href="validate_disabled_qrcode.php" class="btn btn-danger" >Désactiver</a></div>'; // si active est true, alors on va afficher le bouton désactiver
                        } else {
-                           echo '<div class="form-group"><button class="btn btn-primary btn-block btn-lg" type="submit" name="validateform" style="margin-top: 33px;">Activer</button></div>';
+                           echo '<div class="form-group"><button class="btn btn-primary btn-block btn-lg" type="submit" name="validateform" style="margin-top: 33px;">Activer</button></div>'; // si active est false, alors on va afficher le bouton activer
                        }
                         
                         ?>

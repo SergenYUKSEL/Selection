@@ -3,7 +3,7 @@
         session_start();
         }
     sleep(3);
-    session_destroy();
+    session_destroy(); // on détruit toutes les sessions
     
     echo"<script language=\"javascript\">"
             . "alert('Vous êtes désormais déconnecté, vous allez être redirigé vers la page de connexion :')"  .  "</script>"

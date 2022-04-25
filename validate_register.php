@@ -34,6 +34,7 @@ if ($_POST['password'] !== $_POST['confirm_password']) {
         require('config/connectBDD.php');
         $send = $conn->prepare("INSERT INTO account(firstname, lastname, email, password, confirm_password, role, chl, active) 
                                 VALUES(:firstname, :lastname, :email, :password, :confirm_password, :role, :chl, :active)");
+                                // on insére toutes les données rempli lors de la création du compte
         $send->execute(array(
             ":firstname" => $firstname,
             ":lastname" => $lastname,

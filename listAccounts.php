@@ -10,6 +10,7 @@ else if($_SESSION['verify'] == false) {
     echo"<script language=\"javascript\">"
     . "alert('Il faut être authentifier pour pouvoir accéder à cette page)" .  "</script>"
       . "<script language=\"javascript\">" .  "window.location.replace('qrcode_verif.php');" .  "</script>";
+      // cette condition permet à l'utilisateur, connecté mais n'ayant pas validé le qr code à ne pas passer à travers la page d'authentification
 }
 
 else if($_SESSION['role'] == 'teacher') {
@@ -62,7 +63,7 @@ else if($_SESSION['role'] == 'teacher') {
                         
                         require('config/connectBDD.php');
                         
-                        $req = "SELECT * FROM account";
+                        $req = "SELECT * FROM account"; // on sélectionne tous les comptes de la table account
  
                         //--- Résultat ---//
                         $res= $conn->query($req);
@@ -87,7 +88,7 @@ else if($_SESSION['role'] == 'teacher') {
                         if($row = $res->fetch(PDO::FETCH_ASSOC)) {
                            
                         }
-                        if($i%$nbcol==0)
+                        if($i%$nbcol==0) // puis on affiche de façon dynamique dans un tableau avec les valeurs id, lastname, firstname, email et role
                         echo ' <tr>';
                         echo '<td>' , $valeur1, '</td>';
                         echo '<td>' , $valeur2, '</td>';

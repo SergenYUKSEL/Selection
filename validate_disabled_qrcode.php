@@ -13,7 +13,7 @@ if(!isset($_SESSION['logged'])) {
             
             try{
                 require('config/connectBDD.php');
-
+                // on change la valeur de active de true à false
                 $update = $conn->prepare("
                   UPDATE account
                   SET active = ?
