@@ -27,7 +27,10 @@
                                 }
                             else if(isset($_SESSION['role']) && $_SESSION['role'] === 'secretary') {
                                 echo '<li class="nav-item"><a class="nav-link" href="listGrid.php?req=1">Liste des étudiants inscrits</a></li>';
-                                } ?>
+                                }
+                            else if(!isset($_SESSION['logged'])) {
+                                echo "<li class=\"nav-item\"><a class=\"nav-link\" href=\"candidat_search.php\">Trouver sa grille</a></li>";
+                                }  ?>
                         
                         <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'administrator') {
                             echo "<li class=\"nav-item\"><a class=\"nav-link\" href=\"createAccount.php\">Création d'un compte</a></li>";

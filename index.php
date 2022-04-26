@@ -37,9 +37,8 @@ session_destroy();
                       <!--  <div class="form-group"><i class="fa fa-google" aria-hidden="true"></i><input class="form-control" type="number" name="code-auth" placeholder="Google Authenticator" required="required" style="margin-top: 45px;"></div> -->
                       <!--  <p>Code Google Auth : <?php // echo $otp->now();?></p> -->
                         <div class="form-group"><button class="btn btn-primary btn-block btn-lg" type="submit" name="validateform" style="margin-top: 33px;">Se connecter</button></div>
-                        
-
                     </form>
+                    <div class="form-group"><a href="candidat_search.php" class="btn btn-primary btn-block btn-lg" style="margin-top: 33px;">Trouver sa grille</a></div>
                 </div>
             </div>
         </div>
